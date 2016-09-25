@@ -9,6 +9,7 @@ class KittensController < ApplicationController
 
   def	new
     @kitten = Kitten.new
+    @label = "Create new kitten"
   end
 
   def	create
@@ -22,11 +23,19 @@ class KittensController < ApplicationController
   end
 
   def	edit
-
+    @kitten = Kitten.find(params[:id])
+    @label = "Save kitten"
   end
 
   def	update
-
+    @kitten = Kitten.find(params[:id])
+    if @kitten.update_attributes(kitten_params)
+      flash[:success] = "Profile updated"
+      redirect_to @kitten
+    else
+      flash[:danger] = "There is some problem"
+      render 'edit'
+    end
   end
 
   def	destroy
