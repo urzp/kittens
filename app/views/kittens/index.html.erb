@@ -1,5 +1,7 @@
 <h1>All kittnes</h1>
 
+<%= link_to "New kitten", new_kitten_url %>
+
 <ul class="kittnes">
   <% @kittens.each do |kitten| %>
       <%= render kitten %>
