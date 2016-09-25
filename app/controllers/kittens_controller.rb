@@ -48,7 +48,7 @@ class KittensController < ApplicationController
   private
 
   def kitten_params
-    params.require(:kitten).permit(:name, :age)
+    params.require(:kitten).permit(:name, :age, :image)
   end
 
 end

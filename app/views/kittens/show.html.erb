@@ -1,5 +1,7 @@
 <h1>Kitten: <%= @kitten.name %> </h1>
+<%= image_tag @kitten.image.url(:medium) %>
 <br>
+
 <h2>Age: <%= @kitten.age %> </h2>
 
 <%= link_to "All kittens", root_path %> |
